@@ -14,7 +14,7 @@ const app = express();
 
 
 app.use(cors({ 
-  origin: "http://meeting.zenpix.shop",
+  origin: "https://meeting.zenpix.shop",
   credentials: true,
 }));
 
