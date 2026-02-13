@@ -1,8 +1,8 @@
 import React from 'react'
-import Dashboard from '../Components/Dashboard'
-import RecentTranscripts from '../Components/RecentTranscripts'
+import Dashboard from '../components/Dashboard'
+import RecentTranscripts from '../components/RecentTranscripts'
 import Footer from './Footer'
-import Navbar from '../Components/Navbar'
+import Navbar from '../components/Navbar'
 
 
 function Landing() {

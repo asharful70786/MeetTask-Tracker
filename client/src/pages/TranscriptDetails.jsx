@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
-import TaskModal from "../components/Tasks/TaskModal.jsx";
+import TaskModal from "../components/tasks/TaskModal.jsx";
 
 
 

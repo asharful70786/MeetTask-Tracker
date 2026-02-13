@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route, Router } from "react-router-dom";
-import Dashboard from "./Components/Dashboard";
-import RecentTranscripts from "./Components/RecentTranscripts";
+import Dashboard from "./components/Dashboard";
+import RecentTranscripts from "./components/RecentTranscripts";
 import TranscriptDetails from "./pages/TranscriptDetails";
 import Landing from "./pages/Landing";
 import NotFound from "./pages/NotFound";

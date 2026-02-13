@@ -1,5 +1,5 @@
 import express from "express";
-import cors from "cor s";
+import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import transcriptRoutes from "./Routes/transcriptRoutes.js";
