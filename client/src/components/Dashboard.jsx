@@ -16,6 +16,7 @@ import {
   FiShield,
   FiTrendingUp
 } from "react-icons/fi";
+import SystemHealthDots from "./SystemHealthDots";
 
 const API_BASE = (import.meta.env.VITE_BACKEND_BASE_URL || "http://localhost:5000/api").replace(/\/$/, "");
 const EXTRACT_URL = `${API_BASE}/transcript/extract`;
@@ -193,6 +194,8 @@ Sehnaz: Make it feel like it's processing, step-by-step. The design should be mo
               <span className="text-sm font-medium">✨ AI-Powered Meeting Intelligence</span>
             </div>
             
+            <SystemHealthDots intervalMs={30000} />
+
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
               Transform Meetings into
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#F97316] to-[#F59E0B]">
