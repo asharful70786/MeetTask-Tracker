@@ -16,15 +16,15 @@ dotenv.config();
 const app = express();
 
 
-// app.use(cors({ 
-//   origin: "https://meeting.zenpix.shop",
-//   credentials: true,
-// }));
-
 app.use(cors({ 
-  origin: "http://localhost:5173",
+  origin: "https://meeting.zenpix.shop",
   credentials: true,
 }));
+
+// app.use(cors({ 
+//   origin: "http://localhost:5173",
+//   credentials: true,
+// }));
 
 
 
