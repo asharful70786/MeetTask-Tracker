@@ -1,6 +1,8 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
-import TaskModal from "../components/tasks/TaskModal";
+import TaskModal from "../components/Tasks/TaskModal.jsx";
+
+
 
 const API_BASE = (import.meta.env.VITE_BACKEND_BASE_URL || "http://localhost:5000/api").replace(/\/$/, "");
 
