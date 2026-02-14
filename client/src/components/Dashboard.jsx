@@ -83,6 +83,8 @@ export default function Dashboard({ onExtractSuccess, initialTranscript = "" }) 
   const [result, setResult] = useState(null);
   const [err, setErr] = useState("");
   const [copied, setCopied] = useState(false);
+  const [successMsg, setSuccessMsg] = useState("");
+
 
   const intervalRef = useRef(null);
 
@@ -144,6 +146,12 @@ export default function Dashboard({ onExtractSuccess, initialTranscript = "" }) 
       setIsSubmitting(false);
       if (intervalRef.current) clearInterval(intervalRef.current);
       intervalRef.current = null;
+      //clear the form
+   
+     setSuccessMsg("✅ Done. Your transcript is saved — scroll down to see it in Recent transcripts.");
+     setTranscript("");
+     setTimeout(() => setSuccessMsg(""), 3500);
+
     }
   }
 
@@ -295,6 +303,22 @@ Sehnaz: Make it feel like it's processing, step-by-step. The design should be mo
                     <>
                       Extract Action Items
                       <FiArrowRight className="w-4 h-4" />
+                      <AnimatePresence>
+  {successMsg && !isSubmitting && !err && (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 10 }}
+      className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3"
+    >
+      <p className="text-sm text-emerald-800">{successMsg}</p>
+      <p className="text-xs text-emerald-700/80 mt-1">
+        Tip: Recent transcripts is right below this section.
+      </p>
+    </motion.div>
+  )}
+</AnimatePresence>
+
                     </>
                   )}
                 </button>
