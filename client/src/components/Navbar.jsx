@@ -1,5 +1,6 @@
 import React from 'react'
 import { FiZap } from 'react-icons/fi'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
@@ -14,8 +15,13 @@ function Navbar() {
               <span className="px-2 py-1 bg-white/10 rounded-lg text-xs font-medium">Beta</span>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="text-sm text-white/70 hover:text-white transition-colors">Documentation</button>
-              <button className="text-sm text-white/70 hover:text-white transition-colors">Pricing</button>
+               <Link  to="/"   className="text-sm text-white/70 hover:text-white transition-colors">
+                  Home
+             </Link>
+             <Link  to="/status"   className="text-sm text-white/70 hover:text-white transition-colors">
+                   Healthcheck
+             </Link>
+              {/* <button className="text-sm text-white/70 hover:text-white transition-colors">Pricing</button> */}
               <button className="bg-white text-[#064E3B] px-4 py-2 rounded-xl text-sm font-medium hover:bg-white/90 transition-all hover:scale-105">
                 Sign In
               </button>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiClock, FiCalendar, FiFileText, FiAlertCircle } from "react-icons/fi";
@@ -345,10 +346,19 @@ export default function RecentTranscripts() {
             py-2 border-t border-white/10
           "
         >
-          <span>View all transcripts</span>
-          <motion.span animate={{ x: [0, 3, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
-            →
-          </motion.span>
+         
+<Link
+  to="/transcripts"
+  className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+>
+  <span>View all transcripts</span>
+  <motion.span
+    animate={{ x: [0, 3, 0] }}
+    transition={{ duration: 1.5, repeat: Infinity }}
+  >
+    →
+  </motion.span>
+</Link>
         </motion.button>
       )}
     </motion.div>
