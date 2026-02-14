@@ -5,7 +5,8 @@ const isValidObjectId = (id) => mongoose.Types.ObjectId.isValid(id);
 
 export const getTranscripts = async (req, res) => {
   try {
-    const limit = Number(req.query.limit) || 5;
+    const limit = Number(req.query.limit) || 50;
+    console.log(limit)
 
     const docs = await Transcript.find({})
       .sort({ createdAt: -1 }).limit(limit).select("_id createdAt");
