@@ -17,14 +17,9 @@ const app = express();
 
 
 app.use(cors({ 
-  origin: "https://meeting.zenpix.shop",
+  origin:  process.env.CORS_ORIGIN ,
   credentials: true,
 }));
-
-// app.use(cors({ 
-//   origin: "http://localhost:5173",
-//   credentials: true,
-// }));
 
 
 
@@ -46,7 +41,7 @@ app.use("/api", statusRoutes);
 app.post("/api/send-email", async (req, res) => {
   try {
     const { email, task } = req.body;
-    console.log(task)
+   
     if (!email || !task) return res.status(400).json({ message: "Email and task are required" }); 
 
     const result = await SendEmail_service({email,task});

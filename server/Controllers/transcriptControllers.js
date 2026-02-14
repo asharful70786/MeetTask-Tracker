@@ -6,7 +6,7 @@ const isValidObjectId = (id) => mongoose.Types.ObjectId.isValid(id);
 export const getTranscripts = async (req, res) => {
   try {
     const limit = Number(req.query.limit) || 50;
-    console.log(limit)
+
 
     const docs = await Transcript.find({})
       .sort({ createdAt: -1 }).limit(limit).select("_id createdAt");
@@ -21,7 +21,7 @@ export const getTranscripts = async (req, res) => {
 export const individual_Transcript = async (req, res) => {
   try {
     const { id } = req.params;
-    console.log(id)
+
     const doc = await Transcript.findById(id);
     if (!doc) return res.status(404).json({ error: "Transcript not found" });
     return res.status(200).json(doc);
@@ -40,7 +40,7 @@ export const saveTranscript = async(req, res) => {
 
  
    const actionItems = await format_Items_Ai(transcript); 
-   console.log(actionItems);
+  
 
     const doc = await Transcript.create({
       rawText: transcript,
