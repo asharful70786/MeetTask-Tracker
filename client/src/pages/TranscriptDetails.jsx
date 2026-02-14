@@ -280,7 +280,7 @@ export default function TranscriptDetails() {
             <div className="p-5 md:p-6">
               <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-6">
                 <div>
-                  <h1 className="text-2xl font-bold text-gray-800">{transcript?.title || "Untitled meeting"}</h1>
+                  <h1 className="text-2xl font-bold text-gray-800">{transcript?.title || "Meeting Details "}</h1>
                   <div className="flex items-center gap-2 mt-1 text-sm text-orange-600">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />

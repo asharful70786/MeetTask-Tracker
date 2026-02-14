@@ -54,7 +54,7 @@ function getTimeColor(dateString) {
   return "text-white/55";
 }
 
-export default function RecentTranscripts() {
+export default function RecentTranscripts({ refreshKey = 0 }) {
   const navigate = useNavigate();
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -83,7 +83,7 @@ export default function RecentTranscripts() {
     return () => {
       alive = false;
     };
-  }, []);
+  }, [refreshKey]);
 
   const openTranscript = (t) => {
     if (!t?._id) return;
@@ -231,7 +231,7 @@ export default function RecentTranscripts() {
               animate="visible"
               className="space-y-2"
             >
-              {items.map((t) => {
+              {items.map((t , index) => {
                 const formattedDate = formatDate(t.createdAt);
                 const timeColor = getTimeColor(t.createdAt);
 
@@ -269,7 +269,8 @@ export default function RecentTranscripts() {
                           >
                             <div className="w-1.5 h-1.5 rounded-full bg-amber-300/90" />
                             <p className="text-sm font-medium text-white truncate">
-                              {t.title || "Untitled meeting"}
+                             {t.title || `Meeting ${index + 1}`}
+
                             </p>
                           </motion.div>
                         </div>
