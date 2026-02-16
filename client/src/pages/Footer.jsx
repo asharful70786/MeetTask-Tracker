@@ -26,7 +26,7 @@ function Footer() {
             </div>
 
             <span className="text-sm text-white/60 tracking-wide">
-              © 2024 MeetTask. All rights reserved.
+              © 2026 MeetTask. All rights reserved.
             </span>
           </div>
 
